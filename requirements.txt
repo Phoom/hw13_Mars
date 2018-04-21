@@ -1,8 +1,5 @@
 flask
-render_template
-jsonify
-redirect
 flask_pymongo
-BeautifulSoup
+bs4
 splinter
 pandas
