@@ -1,0 +1,196 @@
+<!DOCTYPE HTML>
+<!--
+	Steven Pham
+	Hw 13
+	Web Scraping and Document Databases
+	Mission to Mars
+
+
+	< Template Credit >
+
+	Hielo by TEMPLATED
+	templated.co @templatedco
+	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
+-->
+<html>
+	<head>
+		<title> MARZZZZ</title>
+</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+		<!-- OMG THIS GAVE ME A LOT OF GRIEF TO FINALLY REALIZE I NEEDED TO MAKE MY URL STATIC -->
+
+		<!-- orig -->
+		<!-- <link rel="stylesheet" href="assets/css/main.css"/> -->
+
+		<!-- updated code for flask  -->
+		<link rel="stylesheet" type= "text/css" href= "{{ url_for('static',filename='assets/css/main.css') }}"/>
+
+
+	</head>
+	<body class="subpage">
+
+
+		<!-- One -->
+			<section id="One" class="wrapper style3">
+				<div class="inner">
+					<header class="align-center">
+						<p>Steven Pham | HW # 13 - Web Scraping </p>
+						<h2>Mission to Mars</h2>
+						<p><a class="button special icon fa-search" href="/scrape" role="button"> Refresh Mars Reports</a></p>
+					</header>
+				</div>
+			</section>
+
+		<!-- Two -->
+			<section id="two" class="wrapper style2">
+				<div class="inner">
+
+					<div class="box">
+						<div class="content">
+							<header class="align-center">
+								<p>Latest Mars News</p>
+								<h2>{{ mars.news_title }}</h2>
+							</header>
+							<p class="align-center">{{ mars.news_p }}</p>
+						</div>
+					</div>
+
+
+
+
+					<div class="grid-style">
+							<div class="box">
+								<div class="content">
+									<header class="align-center">
+										<p>Featured Mars Image</p>
+									</header>
+								</div>
+
+								<div class="image fit">
+									<img src={{ mars.featured_image_url }} alt="" />
+								</div>
+
+							</div>
+
+							<div class="box">
+
+								<div class="content">
+									<header class="align-center">
+										<p>Current Mars Weather</p>
+										<h1></h1>
+										<h1>{{ mars.mars_weather }}</h1>
+									</header>
+								</div>
+
+
+								<div class="table-wrapper">
+									<header class="align-center">
+
+										<p>Mars Facts</p>
+										<h2></h2>
+										{{ mars.marsdata | safe }}
+
+									 </header>
+								</div>
+							</div>
+					</div>
+
+
+					<div class="box">
+				<div class = "content">
+				<header class="align-center">
+						<p class="special">Mars Hemispheres</p>
+					</header>
+					<div class="gallery">
+						<div>
+							<div class="image fit">
+								<a href="#"><img src={{ mars.hemisphere_image_urls[0].img_url }} alt="" /></a>
+									<header class="align-center"><h1></h1>
+									<h2>{{ mars.hemisphere_image_urls[0].title }} </h2>
+									</header>
+							</div>
+						</div>
+
+						<div>
+							<div class="image fit">
+								<a href="#"><img src={{ mars.hemisphere_image_urls[1].img_url }} alt="" /></a>
+									<header class="align-center"><h1></h1>
+									<h2>{{ mars.hemisphere_image_urls[1].title }} </h2>
+									</header>
+
+							</div>
+						</div>
+
+
+						<div>
+							<div class="image fit">
+								<a href="#"><img src={{ mars.hemisphere_image_urls[2].img_url }} alt="" /></a>
+									<header class="align-center"><h1></h1>
+									<h2>{{ mars.hemisphere_image_urls[2].title }} </h2>
+									</header>
+
+							</div>
+						</div>
+
+
+
+						<div>
+							<div class="image fit">
+								<a href="#"><img src={{ mars.hemisphere_image_urls[3].img_url }} alt="" /></a>
+									<header class="align-center"><h1></h1>
+									<h2>{{ mars.hemisphere_image_urls[3].title }} </h2>
+									</header>
+							</div>
+						</div>
+					</div>
+
+					</div>
+					</div>
+				</div>
+
+
+			</section>
+
+
+
+
+
+		<!-- Footer -->
+			<footer id="footer">
+				<div class="container">
+					<ul class="icons">
+						<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+						<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+						<li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
+						<li><a href="#" class="icon fa-envelope-o"><span class="label">Email</span></a></li>
+					</ul>
+				</div>
+				<div class="copyright">
+					&copy; Untitled. All rights reserved.
+				</div>
+			</footer>
+
+
+
+
+		<!-- Scripts -->
+
+			<!-- orig code -->
+			<!--<script src="assets/js/jquery.min.js"></script>-->
+			<!--<script src="assets/js/jquery.scrollex.min.js"></script>-->
+			<!--<script src="assets/js/skel.min.js"></script>-->
+			<!--<script src="assets/js/util.js"></script>-->
+			<!--<script src="assets/js/main.js"></script>-->
+
+			<!-- updated code for flask -->
+			<script src="{{ url_for('static',filename='assets/js/jquery.min.js') }}"></script>
+			<script src="{{ url_for('static',filename='assets/js/jquery.scrollex.min.js') }}"></script>
+			<script src="{{ url_for('static',filename='assets/js/skel.min.js') }}"></script>
+			<script src="{{ url_for('static',filename='assets/js/util.js') }}"></script>
+			<script src="{{ url_for('static',filename='assets/js/main.js') }}"></script>
+
+
+	</body>
+</html>
